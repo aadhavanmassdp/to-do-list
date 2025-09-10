@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collaborative To-Do List App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Team To-Do & Daily Tracker</h1>
+    <button id="theme-toggle" aria-label="Switch Theme" title="Switch theme">🎨 Switch Theme</button>
+  </header>
+  <main>
+    <section id="task-form-section">
+      <form id="task-form" autocomplete="off">
+        <input type="text" id="task-title" placeholder="Task title" required minlength="1"/>
+        <input type="text" id="task-category" placeholder="Category (e.g., Design, Coding, Meeting)"/>
+        <input type="text" id="task-tags" placeholder="Tags (comma-separated)"/>
+        <input type="date" id="task-due" required />
+        <select id="task-priority">
+          <option value="High">High 🔴</option>
+          <option value="Medium" selected>Medium 🟠</option>
+          <option value="Low">Low 🟢</option>
+        </select>
+        <input type="text" id="task-assigned" placeholder="Assigned to (name or team)" />
+        <button type="submit">Add Task</button>
+      </form>
+      <div class="feedback" id="form-feedback"></div>
+    </section>
+    <section id="dashboard">
+      <h2>Daily Productivity</h2>
+      <div id="productivity-summary"></div>
+    </section>
+    <section id="task-list-section">
+      <h2>Tasks</h2>
+      <div id="filters">
+        <input type="search" id="search-box" placeholder="Search tasks..." />
+        <select id="filter-category"><option value="">All Categories</option></select>
+        <select id="filter-priority"><option value="">All Priorities</option></select>
+        <select id="filter-assigned"><option value="">All Assigned</option></select>
+      </div>
+      <ul id="task-list"></ul>
+    </section>
+    <!-- Edit Task Modal -->
+    <div id="modal-backdrop" class="hidden"></div>
+    <div id="edit-modal" class="hidden">
+      <form id="edit-task-form" autocomplete="off">
+        <h3>Edit Task</h3>
+        <input type="text" id="edit-task-title" required minlength="1"/>
+        <input type="text" id="edit-task-category"/>
+        <input type="text" id="edit-task-tags"/>
+        <input type="date" id="edit-task-due" required/>
+        <select id="edit-task-priority">
+          <option value="High">High 🔴</option>
+          <option value="Medium">Medium 🟠</option>
+          <option value="Low">Low 🟢</option>
+        </select>
+        <input type="text" id="edit-task-assigned" />
+        <button type="submit">Save</button>
+        <button type="button" id="close-modal">Cancel</button>
+      </form>
+      <div class="feedback" id="edit-form-feedback"></div>
+    </div>
+  </main>
+  <footer>
+    <small>© Collaborative To-Do App</small>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
