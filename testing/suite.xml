@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Todo App Test Suite">
+    <test name="UI Tests">
+        <classes>
+            <class name="tests.TodoTest"/>
+        </classes>
+    </test>
+</suite>
